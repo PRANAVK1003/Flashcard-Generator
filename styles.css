@@ -1,0 +1,276 @@
+/* ===================== */
+/* ✨ Final Polished Dark-Gradient Theme for Flashcard Generator */
+/* ===================== */
+
+/* Base layout */
+.stApp {
+    background: linear-gradient(to top left, #0f172a, #1e293b, #334155);
+    color: #e2e8f0;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.3s ease;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(to bottom right, #1e293b, #0f172a);
+    padding-top: 2rem;
+}
+
+/* Standard Flashcards (for backward compatibility) */
+.flashcard {
+    background: linear-gradient(to right, #1e293b, #0f172a);
+    border-radius: 16px;
+    padding: 1.8rem;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    min-height: 160px;
+    max-height: 280px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 0;
+    border-left: 6px solid #60a5fa;
+    transition: transform 0.2s ease;
+}
+
+.flashcard:hover {
+    transform: scale(1.02);
+}
+
+.card-content {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #f1f5f9;
+}
+
+.card-counter {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+    text-align: right;
+}
+
+/* Enhanced Flip Card Animation */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px; /* 3D effect */
+    margin-bottom: 1rem;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+}
+
+/* The flip animation */
+.card-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    overflow-y: auto;
+}
+
+.flip-card-front {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #60a5fa;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-left: 6px solid #3b82f6;
+}
+
+.flip-card-back {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    color: #f8fafc;
+    transform: rotateY(180deg);
+    line-height: 1.6;
+    text-align: left;
+    border-left: 6px solid #60a5fa;
+}
+
+/* Progress bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background-color: #475569;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+/* Stats */
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.75rem;
+}
+
+.stat-container {
+    background-color: #1e293b;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.stat-value {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.stat-label {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-top: 2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #334155;
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 6rem 4rem;
+    background-color: #1e293b;
+    border: 1px dashed #64748b;
+    border-radius: 12px;
+    margin-top: 2rem;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
+}
+
+.empty-state h2 {
+    color: #3b82f6;
+    font-size: 2rem;
+}
+
+.empty-state p {
+    color: #cbd5e1;
+}
+
+/* Button styling */
+.stButton > button {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.stButton > button:hover {
+    background: linear-gradient(to right, #2563eb, #1d4ed8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.stButton > button:active {
+    transform: translateY(0px);
+}
+
+/* Input fields */
+input,
+textarea,
+.stTextInput input {
+    background-color: #1e293b;
+    color: #f8fafc;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    padding: 0.6rem;
+}
+
+/* Input labels and radios */
+label,
+.stRadio > label,
+.stTextInput > label,
+.stTextArea > label,
+.stRadio > div > label,
+.stTextInput label,
+.stTextArea label,
+.stSelectbox label {
+    color: #e2e8f0 !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+}
+
+/* Fix radio button labels (Text, Image options) */
+.stApp .stRadio > label, 
+.stApp .stRadio div[role="radiogroup"] > div > label {
+    color: #e2e8f0 !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+}
+
+/* Main header */
+.main-header {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #60a5fa;
+    margin: 1rem 0 2rem 0;
+    letter-spacing: -0.5px;
+}
+
+/* Top header bar fix */
+header[data-testid="stHeader"] {
+    background: linear-gradient(to bottom right, #0f172a, #1e293b);
+    border-bottom: 1px solid #334155;
+    color: #e2e8f0;
+}   
+
+h2 {
+    color: white;
+}
+
+/* Override Streamlit's internal styles for paragraphs */
+.st-emotion-cache-187vdiz p {
+    word-break: break-word !important;
+    margin-bottom: 0px !important;
+}
+
+/* General override for all paragraphs in Streamlit */
+.stApp p {
+    word-break: break-word !important;
+    margin-bottom: 0px !important;
+    color: white;
+}
+
+/* Animation for flip button */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.stButton > button:nth-child(2) {
+    animation: pulse 2s infinite;
+    background: linear-gradient(to right, #4f46e5, #3b82f6);
+}
